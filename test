@@ -1,12 +1,12 @@
 pipeline {
     agent any
-    tools {
-        maven 'apache-maven-3.0.1' 
-    }
     stages {
         stage('Example') {
+            options {
+                timeout(time: 1, unit: 'HOURS') 
+            }
             steps {
-                sh 'mvn --version'
+                echo 'Hello World'
             }
         }
     }
